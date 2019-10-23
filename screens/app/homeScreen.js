@@ -184,21 +184,21 @@ class HomeScreen extends Component {
   }
 
   render() {
-    // if (this.state.time >= 23 || this.state.time < 9 || false) {
-    //   addProductForm = (
-    //     <View
-    //       style={{
-    //         marginTop: 30,
-    //         justifyContent: "center",
-    //         alignItems: "center"
-    //       }}
-    //     >
-    //       <Text style={styles.text1}>
-    //         We are accepting orders only for Jeetu's Kitchen after 11:00 PM.
-    //       </Text>
-    //     </View>
-    //   );
-      /*nightDeliveryDisclaimer = (
+    if (false && (this.state.time >= 23 || this.state.time < 9)) {
+      addProductForm = (
+        <View
+          style={{
+            marginTop: 30,
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <Text style={styles.text1}>
+            We are accepting orders only for Jeetu's Kitchen after 11:00 PM.
+          </Text>
+        </View>
+      );
+      nightDeliveryDisclaimer = (
         <View
           style={{
             marginTop: 10,
@@ -214,9 +214,9 @@ class HomeScreen extends Component {
             We are accepting orders only for Jeetu's Kitchen after 11:00 PM.
           </Text>
         </View>
-      );*/
-      // nightDeliveryDisclaimer = null;
-    // } else {
+      );
+      nightDeliveryDisclaimer = null;
+    } else {
       addProductForm = this.state.products.map((l, i) => (
         <ProductForm
           id={l.id}
@@ -225,7 +225,7 @@ class HomeScreen extends Component {
         />
       ));
       nightDeliveryDisclaimer = null;
-    // }
+    }
     console.log(this.state.outlets);
     return (
       <View style={styles.container}>
@@ -270,7 +270,7 @@ class HomeScreen extends Component {
                 // changes from true to false and false to true
                 disabled=
                 {
-                  this.state.time >= 23 || this.state.time < 9 ? true : false
+                  this.state.time >= 23 || this.state.time < 9 ? false : true
                 }
               />
             </View>
